@@ -1,4 +1,4 @@
-package events
+package event
 
 import (
 	"github.com/DomNook/RiverCrossingTest/state"
@@ -13,7 +13,7 @@ func PutChickenInBoat() {
 func PutFoxInBoat() {
 	state.FoxInBoat = true
 	state.FoxOnNewLand = false
-	state.ChickenOnOldLand = false
+	state.FoxOnOldLand = false
 }
 func PutCornInBoat() {
 	state.CornInBoat = true

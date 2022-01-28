@@ -44,7 +44,11 @@ func FetchState() string {
 	} else {
 		boatlocation = "winning land\n"
 	}
+
 	//are the objects in the boat?
+
+	//first empty the string
+	textsub1 = ""
 	if ChickenInBoat == true {
 		textsub1 = "Chicken\n"
 	}
@@ -59,6 +63,9 @@ func FetchState() string {
 	}
 
 	//are the objects on the starting landmass?
+
+	//first empty the string
+	textsub2 = ""
 	if ChickenOnOldLand == true {
 		textsub2 = "Chicken\n"
 	}
@@ -73,6 +80,9 @@ func FetchState() string {
 	}
 
 	//are the objects on the ending landmass?
+
+	//first empty the string
+	textsub3 = ""
 	if ChickenOnNewLand == true {
 		textsub3 = "Chicken\n"
 	}

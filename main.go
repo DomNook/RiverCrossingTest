@@ -25,7 +25,7 @@ func main() {
 	fmt.Println(char)
 
 	if char == 49 {
-		fmt.Println("Under construction")
+		ChooseMoveItem()
 	} else if char == 50 {
 		fmt.Println(state.FetchState())
 	} else if char == 51 {
@@ -37,7 +37,7 @@ func main() {
 }
 
 func ChooseMoveItem() {
-
+	fmt.Println("What do you want to put into the boat? [Chicken:[Press 1]] [Fox:[Press 2]] [Corn:[Press 3]] [Farmer:[Press 4]]")
 	reader := bufio.NewReader(os.Stdin)
 
 	char, _, err := reader.ReadRune()
@@ -63,4 +63,6 @@ func ChooseMoveItem() {
 	} else {
 		fmt.Println("Error: Inputted number is not allowed. Program will now exit")
 	}
+
+	main()
 }
