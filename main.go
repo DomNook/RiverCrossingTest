@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/DomNook/RiverCrossingTest/event"
 	"github.com/DomNook/RiverCrossingTest/state"
 )
 
@@ -33,4 +34,33 @@ func main() {
 		fmt.Println("Error: Inputted number is not allowed. Program will now exit")
 	}
 
+}
+
+func ChooseMoveItem() {
+
+	reader := bufio.NewReader(os.Stdin)
+
+	char, _, err := reader.ReadRune()
+
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	fmt.Println(char)
+
+	if char == 49 {
+		event.PutChickenInBoat()
+		fmt.Println(state.FetchState())
+	} else if char == 50 {
+		event.PutFoxInBoat()
+		fmt.Println(state.FetchState)
+	} else if char == 51 {
+		event.PutCornInBoat()
+		fmt.Println(state.FetchState)
+	} else if char == 52 {
+		event.PutFarmerInBoat()
+		fmt.Println(state.FetchState)
+	} else {
+		fmt.Println("Error: Inputted number is not allowed. Program will now exit")
+	}
 }
