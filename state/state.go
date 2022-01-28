@@ -1,5 +1,10 @@
 package state
 
+//Variable for boat location
+//where false = starting land
+//and true = winning land
+var WhereIsBoat = false
+
 // Variables for verifiying if objects are in the boat
 var ChickenInBoat = false
 var FoxInBoat = false
@@ -21,7 +26,10 @@ var FarmerOnNewLand = false
 // Total slots in boat
 var Boatslots = 4
 
-var text1 = "currently onboard the boat:\n"
+var textboat = "\nThe Boat is currently at the: "
+var boatlocation = ""
+
+var text1 = "\ncurrently onboard the boat:\n"
 var text2 = "\ncurrently on starting land:\n"
 var text3 = "\ncurretnly on the ending land:\n"
 
@@ -30,6 +38,12 @@ var textsub2 = ""
 var textsub3 = ""
 
 func FetchState() string {
+	//where is the boat?
+	if WhereIsBoat == false {
+		boatlocation = "starting land\n"
+	} else {
+		boatlocation = "winning land\n"
+	}
 	//are the objects in the boat?
 	if ChickenInBoat == true {
 		textsub1 = "Chicken\n"
@@ -73,6 +87,6 @@ func FetchState() string {
 	}
 
 	// return previously fetched state values
-	fulltext := text1 + textsub1 + text2 + textsub2 + text3 + textsub3
+	fulltext := textboat + boatlocation + text1 + textsub1 + text2 + textsub2 + text3 + textsub3
 	return fulltext
 }
