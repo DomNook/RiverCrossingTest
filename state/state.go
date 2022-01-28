@@ -97,6 +97,6 @@ func FetchState() string {
 	}
 
 	// return previously fetched state values
-	fulltext := textboat + boatlocation + text1 + textsub1 + text2 + textsub2 + text3 + textsub3
-	return fulltext
+	Fulltext := textboat + boatlocation + text1 + textsub1 + text2 + textsub2 + text3 + textsub3
+	return Fulltext
 }
